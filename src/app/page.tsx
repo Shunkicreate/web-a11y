@@ -1,11 +1,7 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import fsPromises from "fs/promises";
 import path from "path";
 import { readdirSync, statSync } from "fs";
 import Link from "next/link";
-import { MouseEvent, useState } from "react";
-import styled from "styled-components";
 
 const findAllFiles = (dir: string, num: number) => {
 	const filenames = readdirSync(dir);

@@ -22,13 +22,13 @@ const findAllFiles = (dir: string, num: number) => {
 };
 
 const rmPageName = (name: string) => {
-	const regex = /\\page.tsx/;
+	const regex = /[\\/]page.tsx/;
 	const result = name.split(regex)[0];
 	return result;
 };
 
 const pickUpPath = (path: string) => {
-	const regex = /app\\/;
+	const regex = /app[\\/](.+)/;
 	const result = path.split(regex)[1];
 	return result;
 };

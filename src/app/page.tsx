@@ -36,7 +36,7 @@ const pickUpPath = (path: string) => {
 const NavLink = ({ site }: { site: string }) => {
 	return (
 		<div className={styles.NavLink}>
-			<Link href={site}>
+			<Link href={site ?? ''}>
 				{site}
 			</Link>
 		</div>

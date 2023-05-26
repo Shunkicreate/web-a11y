@@ -6,8 +6,7 @@ const Page = () => {
 </button>
 `;
 	const BadButtonExample = `
-<div className="Button>
-    <img src="/imgs/add.svg" alt="追加"/>
+<div className="Button">
     <svg className="Icon -add" >
         <g opacity="0.64" clip-path="url(#clip0_1211_2)">
             <circle cx="32" cy="32" r="30.5" fill="white" stroke="black" stroke-width="3"/>
@@ -94,8 +93,11 @@ const Page = () => {
 			</p>
             <h2>HTMLとWAI-ARIAとAOM</h2>
             <p>
-                
+				これまで述べてきた名前，役割，状態といったセマンティックスの多くはOSが用意しているアクセシビリティAPIによって，支援技術として使えるようになる．WindowsだとMicrosoft Active Accessibility，Windows Automation APIなどがあり，macOSだとNSAccessibilityである．OS上のアプリケーションはアプリケーションのウィンドウをルートノードとしたアクセシビリティオブジェクトモデル(AOM.．アクセシビリティ)を生成する．支援技術はこのAOMを読みとり，操作することでアプリケーションを操作する．ブラウザはブラウザ自信が持つ戻るボタンや検索バーなどのインターフェースだけではなく，Webページの著者が作成したコンテンツもAOMに変換してアクセシビリティAPIを通じて公開している．
             </p>
+			<h3>
+				ウェブコンテンツからAOMを生成する
+			</h3>
 		</div>
 	);
 };

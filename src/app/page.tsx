@@ -49,7 +49,7 @@ export default async function Home() {
 
 	return (
 		<main className={styles.main}>
-			<h1>Webアプリケーション勉強会</h1>
+			<h1>Webアプリケーションアクセシビリティ勉強会</h1>
 			<p>
 				このサイトは「Webアプリケーションアクセシビリティ 今日から始める現場からの改善」のアウトプット用サイトです。
 			</p>

@@ -1,20 +1,39 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	padding: 6rem;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100dvh;
+  background-color: "gray";
+  margin: auto;
+  
+  @media (min-width: 640px) {
+    width: 100%;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (min-width: 1536px) {
+    width: 60%;
+  }
 }
 
-.NavLink{
+.body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.NavLink {
   margin: 0.5rem;
   display: flex;
-  justify-content: center; /*左右中央揃え*/
+  justify-content: center;
+  /*左右中央揃え*/
   align-items: center;
 }
 
 .NavLink a {
-	padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
   height: 2.5rem;
   display: block;
   border-radius: 1rem;
@@ -23,6 +42,6 @@
 
 
 .NavLink a:hover {
-	background-color: #eee;
+  background-color: #eee;
   transition: 0.5s;
 }

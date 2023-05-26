@@ -2,7 +2,7 @@
   display: block;
   justify-content: space-between;
   align-items: center;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   background-color: "gray";
   margin: auto;
   

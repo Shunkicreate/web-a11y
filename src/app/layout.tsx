@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
+import Header from '@/components/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,11 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={inter.className + " " + styles.body}>
-        {/* <div style={}> */}
-          {children}
-        {/* </div> */}
+        <Header />
+        {children}
       </body>
     </html>
   )

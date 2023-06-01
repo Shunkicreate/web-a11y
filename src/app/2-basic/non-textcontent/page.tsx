@@ -13,39 +13,143 @@ const AgreeCheckbox: React.FC = () => {
             </p>
             <br></br>
             <h2>よくある事例</h2>
-            <h3>事例１:代替テキストが付与されていない画像</h3>
-            <h4>悪い例 その1</h4>
-            <img src="/image/pic1.svg" />
-            <p>コード</p>
             <div>
-                <a style={{ color: "blue" }}>img src="/image/pic1.svg"</a>
-            </div>
-            <br></br>
-            <p>img要素にはalt属性により代替テキストを付与できる。alt属性はスクリーンリーダユーザのためだけでなく次のような利点もある。</p>
-            <ul>
-				<li>・画像検索エンジンがコンテンツを理解する助けになる。</li>
-				<li>・画像のリソースの取得に失敗した場合のフォールバックとして機能する。</li>
-			</ul>
-            <br></br>
-            <h4>改善案:画像に代替テキストを付与する</h4>
-            <p>img要素にはalt属性により代替テキストを付与する。装飾の画像の場合でも、値が空のalt属性をつけることによって装飾であることを伝えられる。</p>
-            <p>コード</p>
-            <div>
-                <a style={{ color: "blue" }}>img src="/image/pic1.svg" alt="猫"</a>
-            </div>
+                <h3>事例１:代替テキストが付与されていない画像</h3>
+                <div>
+                    <h4>悪い例1 代替テキストがないimg要素</h4>
+                    <div>
+                        <img src="/image/pic1.svg" />
+                    </div>
 
-            <br></br>
-            <h4>悪い例 その2</h4>
-            <svg viewBox="0 0 200 200">
-                <circle cx="25" cy="25" r="25" fill="#3333" />
-            </svg>
-            <p>コード</p>
-            <div>
-                <a style={{ color: "blue" }}>svg viewBox="0 0 512 512"</a><br></br>
-                <a style={{color: "blue"}}>circle cx="50" cy="50" r="50" fill="blue"</a>
+                    <p>コード</p>
+                    <p>&lt;img src="/image/pic1.svg"/&gt;</p>
+                    <br></br>
+                    <p>img要素にはalt属性により代替テキストを付与できる。alt属性はスクリーンリーダユーザのためだけでなく次のような利点もある。</p>
+                    <ul>
+                        <li>・画像検索エンジンがコンテンツを理解する助けになる。</li>
+                        <li>・画像のリソースの取得に失敗した場合のフォールバックとして機能する。</li>
+                    </ul>
+                    <br></br>
+                    <h4>改善例:画像に代替テキストを付与する</h4>
+                    <p>img要素にはalt属性により代替テキストを付与する。装飾の画像の場合でも、値が空のalt属性をつけることによって装飾であることを伝えられる。</p>
+                    <br></br>
+                    <p>コード</p>
+                    <p>&lt;img src="/image/pic1.svg" alt="猫"/&gt;</p>
+                    <br></br>
+                </div>
+                <div>
+                    <h4>悪い例2 代替テキストがないsvg要素</h4>
+                    <div>
+                        <svg>
+                            <path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"></path>
+                        </svg>
+                    </div>
+                    <br></br>
+                    <p>コード</p>
+                    <p>&lt;svg&gt;<br></br>&lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>&lt;/svg&gt;</p>
+                    <br></br>
+                    <p>HTML内にsvg要素で画像を表示する際も画像の代替テキストを提供する必要がある。</p>
+                    <br></br>
+                    <h4>改善例:svg要素にtitle要素を用いて代替テキストを付与する</h4>
+                    <p>svg要素は現状ブラウザによってアクセシビリティオブジェクトモデルのRole」プロパティの値が変わるため、role=imgを用いてRoleプロパティをimgに固定する。</p>
+                    <br></br>
+                    <p>コード</p>
+                    <p>
+                        &lt;svg role="img"&gt;<br></br>
+                        &lt;title&gt;検索&lt;/title&gt;<br></br>
+                        &lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>
+                        &lt;/svg&gt;
+                    </p><br></br>
+                    <p>または、直接aria-label属性を用いても良い。</p>
+                    <br></br>
+                    <p>コード</p>
+                    <p>
+                        &lt;svg role="img" aria-label="検索"&gt;<br></br>
+                        &lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>
+                        &lt;/svg&gt;
+                    </p>
+                    <br></br>
+                </div>
             </div>
-            <br></br>
-            <p>HTML内にsvg要素で画像を表示する際も画像の代替テキストを提供する必要がある。</p>
+            <div>
+                <h3>事例２:アクセシブルな名前のないUI</h3>
+                <p>アクセシブルな名前、つまりアクセシビリティオブジェクトモデルのNameプロパティがないUIは、操作した時に何が起こるか、何を入力するべきかが視覚情報からしかわからない。たとえば代替テキストのないアイコンのみのを使用したボタンは、スクリーンリーダにはボタンであることしか伝わらず、何の操作をすれば良いかがわからない。</p>
+                <br></br>
+                <div>
+                    <h4>悪い例1 アクセシブルな名前がないボタン</h4>
+                    <button type="button">
+                        <svg width={100} height={40}></svg>
+                    </button>
+                    <p>コード</p><br></br>
+                    <div>
+                        <p>
+                            &lt;button type="button"&gt;<br></br>
+                            &lt;svg width={100} height={40}&gt;&lt;/svg&gt;<br></br>
+                            &lt;/button&gt;
+                        </p>
+                        <br></br>
+                    </div>
+                    <h4>改善例</h4>
+                    <button type="button">
+                        <svg width={100} height={40}></svg>
+                        追加
+                    </button>
+                    <p>コード</p><br></br>
+                    <p>
+                        &lt;button type="button"&gt;<br></br>
+                        &lt;svg width={100} height={40}&gt;&lt;/svg&gt;<br></br>
+                        追加<br></br>
+                        &lt;/button&gt;
+                    </p>
+                    <br></br>
+                    <p>最も簡単な方法は、UIとなる要素にテキストを内包させることである。テキストを追加することで、アイコンのみより動作の意味が明確になる。また他言語への翻訳を考えると、最もアクセシブルな方法である。<br></br>
+                        他にも次のような改善例がある。</p><br></br>
+                    <p>コード1 img要素を用いたとき</p>
+                    <p>
+                        &lt;button type="button"&gt;<br></br>
+                        &lt;img src="./image/button.svg" alt="追加"&gt;&lt;/svg&gt;<br></br>
+                        &lt;/button&gt;
+                    </p><br></br>
+                    <p>コード2 svg要素とWAI-AREAを用いたとき</p>
+                    <p>
+                        &lt;button type="button"&gt;<br></br>
+                        &lt;svg role="img" aria-label="追加" width={100} height={40}&gt;&lt;/svg&gt;<br></br>
+                        &lt;/button&gt;
+                    </p>
+                    <br></br>
+                </div>
+                <div>
+                    <h4>悪い例2 アクセシブルな名前がない入力欄</h4>
+                    <div>
+                        <label>
+                            <input type='text' />
+                        </label>
+                    </div>
+                    <p>コード</p><br></br>
+                    <p>
+                        &lt;label&gt;<br></br>
+                        &lt;input type='text'/&gt;<br></br>
+                        &lt;/label&gt;
+                    </p><br></br>
+                    <p>何を入力するべきところなのかが判別できない。</p><br></br>
+                    <h4>改善例 テキストを内包できない要素にlabel要素を用いてテキストと関連付けする</h4>
+                    <div>
+                        <label>
+                            検索
+                            <input type='text' />
+                        </label>
+                    </div>
+                    <br></br><p>コード</p><br></br>
+                    <p>
+                        &lt;label&gt;<br></br>
+                        検索<br></br>
+                        &lt;input type='text'/&gt;<br></br>
+                        &lt;/label&gt;
+                    </p>
+                </div>
+
+
+            </div>
         </div>
     );
 };

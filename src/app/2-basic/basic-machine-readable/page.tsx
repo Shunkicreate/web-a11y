@@ -6,8 +6,7 @@ const Page = () => {
 </button>
 `;
 	const BadButtonExample = `
-<div className="Button>
-    <img src="/imgs/add.svg" alt="追加"/>
+<div className="Button">
     <svg className="Icon -add" >
         <g opacity="0.64" clip-path="url(#clip0_1211_2)">
             <circle cx="32" cy="32" r="30.5" fill="white" stroke="black" stroke-width="3"/>
@@ -94,14 +93,17 @@ const Page = () => {
 			</p>
             <h2>HTMLとWAI-ARIAとAOM</h2>
             <p>
-                これまで説明してきた名前、役割、状態などのセマンティクスはOSが用意しているアクセシビリティAPIを介してアプリケーションとやり取りする。Voice Overなどの支援技術はAOMを読み取り、操作することでアプリケーションを操作する。ブラウザは自身が持つ検索バーや戻るボタンなどのインターフェースだけではなく、Webページの著者が作成したコンテンツもAOMに変換してアクセシビリティAPIを通じて公開している。それによってユーザは支援技術を利用してWebページにアクセスできる。
+                これまで説明してきた名前、役割、状態などのセマンティクスはOSが用意しているアクセシビリティAPIを介してアプリケーションとやり取りする。WindowsだとMicrosoft Active Accessibility、Windows Automation APIなどがあり、macOSだとNSAccessibilityである。Voice Overなどの支援技術はAOMを読み取り、操作することでアプリケーションを操作する。ブラウザは自身が持つ検索バーや戻るボタンなどのインターフェースだけではなく、Webページの著者が作成したコンテンツもAOMに変換してアクセシビリティAPIを通じて公開している。それによってユーザは支援技術を利用してWebページにアクセスできる。
             </p>
 			<h3>WebコンテンツからAOMを作成する</h3>
 			<p>
 				ブラウザは画面上に表示するインターフェースを生成するために、HTMLからDOM(Document Object Model)を生成する。そしてCSSからCSSオブジェクトモデルを生成し、2つのオブジェクトモデルを組み合わせる。そこからレンダリングツリーを作成してレイアウト計算を行い、最終的に画面に描画する。WAI-ARIAを含んだHTMLとCSSをもとにAOMは生成される。優先順位は次のようになる。
 				<div>WAI-ARIA &gt; CSS &gt; HTML</div>
 				つまり、HTMLのプロパティはCSSに上書きされて、さらにWAI-ARIAに上書きされる。CSSによるロールの変更濃霧はブラウザによって異なる場合があるが、WAI-ARIAが優先されることはおおむね度のブラウザでも同じ。ただし、HTMLではrole属性とaria-*属性の組み合わせもある程度定められているため、WAI-ARIAを使用するときは気を付けないといけない。
-			</p>
+            </p>
+			<h3>
+				ウェブコンテンツからAOMを生成する
+			</h3>
 		</div>
 	);
 };

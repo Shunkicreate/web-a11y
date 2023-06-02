@@ -1,47 +1,52 @@
 .main {
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-  /* min-height: 100dvh; */
-  background-color: "gray";
-  margin: auto;
-  
-  @media (min-width: 640px) {
-    width: 100%;
-  }
-  
-  @media (min-width: 1024px) {
-    width: 80%;
-  }
+	display: block;
+	justify-content: space-between;
+	align-items: center;
+	/* min-height: 100dvh; */
+	background-color: "gray";
+	margin: auto;
 
-  @media (min-width: 1536px) {
-    width: 60%;
-  }
+	@media (min-width: 640px) {
+		width: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		width: 80%;
+	}
+
+	@media (min-width: 1536px) {
+		width: 60%;
+	}
 }
 
 .body {
-  width: 100dvw;
-  height: 100dvh;
+	width: 100dvw;
+	height: 100dvh;
 }
 
 .NavLink {
-  margin: 0.5rem;
-  display: flex;
-  justify-content: center;
-  /*左右中央揃え*/
-  align-items: center;
+	margin: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .NavLink a {
-  padding: 0.5rem 2rem;
-  height: 2.5rem;
-  display: block;
-  border-radius: 1rem;
-  /* border: 1px solid #000; */
+	padding: 0.7rem 2rem;
+	display: block;
+	border-radius: 1.3rem;
+	border: 1px ridge rgba(220, 220, 220, 0.6);
+  font-weight: 500;
 }
 
-
 .NavLink a:hover {
-  background-color: #eee;
-  transition: 0.5s;
+	background-color: #eee;
+	transition: 0.5s;
+}
+
+@media (prefers-color-scheme: dark) {
+	.NavLink a:hover {
+		background-color: rgb(70, 70, 70);
+		transition: 0.5s;
+	}
 }

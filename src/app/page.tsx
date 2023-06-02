@@ -36,9 +36,7 @@ const pickUpPath = (path: string) => {
 const NavLink = ({ site }: { site: string }) => {
 	return (
 		<div className={styles.NavLink}>
-			<Link href={site ?? ''}>
-				{site}
-			</Link>
+			<Link href={site ?? ""}>{site}</Link>
 		</div>
 	);
 };
@@ -48,7 +46,7 @@ export default async function Home() {
 	const filePaths = findAllFiles(filePath, 0);
 
 	return (
-		<main className={styles.main}>
+		<>
 			<h1>Webアプリケーションアクセシビリティ勉強会</h1>
 			<p>
 				このサイトは「Webアプリケーションアクセシビリティ 今日から始める現場からの改善」のアウトプット用サイトです。
@@ -62,6 +60,6 @@ export default async function Home() {
 					})}
 				</div>
 			</div>
-		</main>
+		</>
 	);
 }

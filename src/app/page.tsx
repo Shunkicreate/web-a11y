@@ -35,9 +35,9 @@ const pickUpPath = (path: string) => {
 
 const NavLink = ({ site }: { site: string }) => {
 	return (
-		<div className={styles.NavLink}>
+		<li className={styles.NavLink}>
 			<Link href={site ?? ""}>{site}</Link>
-		</div>
+		</li>
 	);
 };
 
@@ -52,13 +52,15 @@ export default async function Home() {
 				このサイトは「Webアプリケーションアクセシビリティ 今日から始める現場からの改善」のアウトプット用サイトです。
 			</p>
 			<p>もし、著作権などの申し立てがあれば速やかにこのウェブページは削除致します。</p>
-			<div style={{ margin: "1rem" }}>
-				<div>目次</div>
-				<div>
-					{filePaths.map((site, i) => {
-						return <NavLink key={i} site={site}></NavLink>;
-					})}
-				</div>
+			<div className={styles.tableOfContents}>
+				<label>
+					目次
+					<ul>
+						{filePaths.map((site, i) => {
+							return <NavLink key={i} site={site}></NavLink>;
+						})}
+					</ul>
+				</label>
 			</div>
 		</>
 	);

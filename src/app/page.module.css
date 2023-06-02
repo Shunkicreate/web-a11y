@@ -36,7 +36,7 @@
 	display: block;
 	border-radius: 1.3rem;
 	border: 1px ridge rgba(220, 220, 220, 0.6);
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .NavLink a:hover {
@@ -49,4 +49,10 @@
 		background-color: rgb(70, 70, 70);
 		transition: 0.5s;
 	}
+}
+
+.tableOfContents {
+	margin: 2rem auto;
+	padding: 1rem 3rem;
+	width: 25rem;
 }

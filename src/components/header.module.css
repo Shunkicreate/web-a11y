@@ -1,0 +1,13 @@
+.header{
+    min-height: 4rem;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top, .nav {
+    margin: auto;
+    @media (min-width: 560px) {
+        margin: auto 4rem;
+	}
+}

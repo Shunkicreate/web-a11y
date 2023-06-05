@@ -1,12 +1,13 @@
 import Link from "next/link"
+import style from "./header.module.css"
+
 const Header = () => {
     return (
-        <header style={{ minHeight: "4rem", borderBottom: "1px solid #999", borderColor: "rgba(0, 0, 0)", display:"flex",  justifyContent: "space-between"
-    }}>
-            <div style={{ margin:"auto 4rem", backgroundColor: "0000" }}>
+        <header className={style.header}>
+            <div className={style.top}>
                 <Link href={"/"}>Webアクセシビリティ勉強会</Link>
             </div>
-            <nav style={{ margin:"auto 4rem" }}>
+            <nav className={style.nav}>
                 <Link href={"/"}>Top</Link>
             </nav>
         </header>

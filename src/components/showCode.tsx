@@ -17,7 +17,7 @@ const ShowCode = ({ code }: Props) => {
 		<div
 			className={style.showCode}
 		>
-			<div className={style.showRow}>
+			<div className={style.showRow + " hogehoge"}>
 				<SyntaxHighlighter language='htmlbars' style={monoBlue}>
 					{code}
 				</SyntaxHighlighter>

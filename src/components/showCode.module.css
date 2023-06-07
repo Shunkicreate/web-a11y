@@ -1,0 +1,18 @@
+.showCode {
+    display: flex;
+    gap: 2rem;
+    border: solid 1px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    flex-flow: column;
+    @media (min-width: 1024px) {
+        flex-flow: row;
+    }
+}
+
+.showRow, .showHTML {
+    width: 100%;
+    @media (min-width: 1024px) {
+        width: 50%;
+	}
+}

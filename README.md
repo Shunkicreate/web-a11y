@@ -9,5 +9,5 @@
 git clone git@github.com:Shunkicreate/web-a11y.git
 cd web-a11y
 npm install
-npm run dev
+npm run dev // ローカルホストの立ち上げ
 ```

@@ -12,6 +12,14 @@ const labelafterlaceHolder = `
     <br/>
     <span id="description">(半角英数字で入力)</span>
 </div>`;
+const waiArea = `
+<form></form>
+<span id="username-label">ユーザ名</span>
+<span id="username-description">(半角英数字で入力)</span>
+<br/>
+<input type="text" style="width: 300px" id="username" aria-labelledby="username-label" aria-describedby="username-description" required>
+</form>
+`;
 
     return(
         <div>
@@ -73,13 +81,11 @@ const labelafterlaceHolder = `
                 <h3>説明の存在に気づかず入力し始める</h3> 
             </li>
         </ul>
-        {/* よくある事例 */}
 
 
 
         <h2  style={{marginTop: 40}}>フォームコントロールにラベルと説明が関連付けられてない</h2>
         <p>スクリーンリーダーはフォームコントロールに関連付けられた情報を読み上げる</p>
-        {/* 事例1 */}
 
         <h2 style={{marginTop: 40}}>入力必須の説明をしていない</h2>
         <label htmlFor="username">ユーザ名<span style={{color: 'red'}}>*</span></label>
@@ -92,7 +98,37 @@ const labelafterlaceHolder = `
                 <p>原因:  プレスホルダーは色が薄い色が使われる</p> 
             </li>
         </ul>
-      
+        <h2  style={{marginTop: 80}}>改善事例一覧</h2>
+        <h3>フォームコントローラーにラベルと説明を関連付ける</h3>
+        <ul>
+            <li>
+                <h3>label要素を使ってフォームコントロールにラベルと説明を関連づける</h3> 
+                <p>そうすることでNameプロパティとして認識してくれて両方読み上げてくれる</p>
+            </li>
+            <li>
+                <h3>WAI-AREAを使って関連づける</h3> 
+                <p>ラベルと説明の両方を読み上げてくれる</p>
+                <ShowCode code={waiArea}></ShowCode>
+            </li>
+        </ul>
+        <h3>注意点</h3>
+        <p>フォームコントロールにさまざまな要素を使ってlabel要素が使えなくなっている時だけ使う</p> 
+        <h3  style={{marginTop: 40}}>フォームコントロールに不可視のラベルをつける</h3>
+        <ul>
+            <li>
+                <h3>直感的にわかりやすいラベルには不可視のタイトルをつける</h3> 
+                <p>事例： 検索</p>
+            </li>
+            <li>
+                <h3>WAI-AREAを使って関連づける</h3> 
+                <p>ラベルと説明の両方を読み上げてくれる</p>
+                <ShowCode code={waiArea}></ShowCode>
+            </li>
+        </ul>
+        <h3  style={{marginTop: 40}}>グループにラベルと説明を関連づける</h3>
+        <p>グループ全体をfiedlset要素で囲み、グループのラベルと説明をlegend要素に含める</p>
+        <h3>注意点</h3>
+        <p>読み取られなくなってしまうので、div要素で囲まない</p>
         {/* まとめ */}
         <h2>まとめ</h2>
         <h3>キーボードで操作することを前提に考える</h3>

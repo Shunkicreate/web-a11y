@@ -22,7 +22,7 @@ const AgreeCheckbox: React.FC = () => {
                     </div>
 
                     <p>コード</p>
-                    <p>&lt;img src="/image/pic1.svg"/&gt;</p>
+                    <p>&lt;img src=&quot;/image/pic1.svg&quot;/&gt;</p>
                     <br></br>
                     <p>img要素にはalt属性により代替テキストを付与できる。alt属性はスクリーンリーダユーザのためだけでなく次のような利点もある。</p>
                     <ul>
@@ -34,7 +34,7 @@ const AgreeCheckbox: React.FC = () => {
                     <p>img要素にはalt属性により代替テキストを付与する。装飾の画像の場合でも、値が空のalt属性をつけることによって装飾であることを伝えられる。</p>
                     <br></br>
                     <p>コード</p>
-                    <p>&lt;img src="/image/pic1.svg" alt="猫"/&gt;</p>
+                    <p>&lt;img src=&quot;/image/pic1.svg&quot; alt=&quot;猫&quot;/&gt;</p>
                     <br></br>
                 </div>
                 <div>
@@ -46,7 +46,7 @@ const AgreeCheckbox: React.FC = () => {
                     </div>
                     <br></br>
                     <p>コード</p>
-                    <p>&lt;svg&gt;<br></br>&lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>&lt;/svg&gt;</p>
+                    <p>&lt;svg&gt;<br></br>&lt;path d=&quot;M0,0 L320,0 320,160 0,160&quot; fill=&quot;#3F51B5&quot;&gt;&lt;/path&gt;<br></br>&lt;/svg&gt;</p>
                     <br></br>
                     <p>HTML内にsvg要素で画像を表示する際も画像の代替テキストを提供する必要がある。</p>
                     <br></br>
@@ -55,17 +55,17 @@ const AgreeCheckbox: React.FC = () => {
                     <br></br>
                     <p>コード</p>
                     <p>
-                        &lt;svg role="img"&gt;<br></br>
+                        &lt;svg role=&quot;img&quot;&gt;<br></br>
                         &lt;title&gt;検索&lt;/title&gt;<br></br>
-                        &lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>
+                        &lt;path d=&quot;M0,0 L320,0 320,160 0,160&quot; fill=&quot;#3F51B5&quot;&gt;&lt;/path&gt;<br></br>
                         &lt;/svg&gt;
                     </p><br></br>
                     <p>または、直接aria-label属性を用いても良い。</p>
                     <br></br>
                     <p>コード</p>
                     <p>
-                        &lt;svg role="img" aria-label="検索"&gt;<br></br>
-                        &lt;path d="M0,0 L320,0 320,160 0,160" fill="#3F51B5"&gt;&lt;/path&gt;<br></br>
+                        &lt;svg role=&quot;img&quot; aria-label=&quot;検索&quot;&gt;<br></br>
+                        &lt;path d=&quot;M0,0 L320,0 320,160 0,160&quot; fill=&quot;#3F51B5&quot;&gt;&lt;/path&gt;<br></br>
                         &lt;/svg&gt;
                     </p>
                     <br></br>
@@ -83,7 +83,7 @@ const AgreeCheckbox: React.FC = () => {
                     <p>コード</p><br></br>
                     <div>
                         <p>
-                            &lt;button type="button"&gt;<br></br>
+                            &lt;button type=&quot;button&quot;&gt;<br></br>
                             &lt;svg width={100} height={40}&gt;&lt;/svg&gt;<br></br>
                             &lt;/button&gt;
                         </p>
@@ -96,7 +96,7 @@ const AgreeCheckbox: React.FC = () => {
                     </button>
                     <p>コード</p><br></br>
                     <p>
-                        &lt;button type="button"&gt;<br></br>
+                        &lt;button type=&quot;button&quot;&gt;<br></br>
                         &lt;svg width={100} height={40}&gt;&lt;/svg&gt;<br></br>
                         追加<br></br>
                         &lt;/button&gt;
@@ -106,14 +106,14 @@ const AgreeCheckbox: React.FC = () => {
                         他にも次のような改善例がある。</p><br></br>
                     <p>コード1 img要素を用いたとき</p>
                     <p>
-                        &lt;button type="button"&gt;<br></br>
-                        &lt;img src="./image/button.svg" alt="追加"&gt;&lt;/svg&gt;<br></br>
+                        &lt;button type=&quot;button&quot;&gt;<br></br>
+                        &lt;img src=&quot;./image/button.svg&quot; alt=&quot;追加&quot;&gt;&lt;/svg&gt;<br></br>
                         &lt;/button&gt;
                     </p><br></br>
                     <p>コード2 svg要素とWAI-AREAを用いたとき</p>
                     <p>
-                        &lt;button type="button"&gt;<br></br>
-                        &lt;svg role="img" aria-label="追加" width={100} height={40}&gt;&lt;/svg&gt;<br></br>
+                        &lt;button type=&quot;button&quot;&gt;<br></br>
+                        &lt;svg role=&quot;img&quot; aria-label=&quot;追加&quot; width={100} height={40}&gt;&lt;/svg&gt;<br></br>
                         &lt;/button&gt;
                     </p>
                     <br></br>
@@ -128,7 +128,7 @@ const AgreeCheckbox: React.FC = () => {
                     <p>コード</p><br></br>
                     <p>
                         &lt;label&gt;<br></br>
-                        &lt;input type='text'/&gt;<br></br>
+                        &lt;input type=&apos;text&apos;/&gt;<br></br>
                         &lt;/label&gt;
                     </p><br></br>
                     <p>何を入力するべきところなのかが判別できない。</p><br></br>
@@ -143,7 +143,7 @@ const AgreeCheckbox: React.FC = () => {
                     <p>
                         &lt;label&gt;<br></br>
                         検索<br></br>
-                        &lt;input type='text'/&gt;<br></br>
+                        &lt;input type=&apos;text&apos;/&gt;<br></br>
                         &lt;/label&gt;
                     </p>
                 </div>

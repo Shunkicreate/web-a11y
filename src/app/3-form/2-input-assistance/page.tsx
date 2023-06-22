@@ -313,32 +313,32 @@ const Page = () => {
 				<div>
 					<label htmlFor='inputModeDecimal'>decimal</label>
 					<br />
-					<input type='text' id='inputModeDecimal' inputMode='decimal' />
+					<input id='inputModeDecimal' inputMode='decimal' />
 				</div>
 				<div>
 					<label htmlFor='inputModeEmail'>email</label>
 					<br />
-					<input type='email' id='inputModeEmail' inputMode='email' />
+					<input id='inputModeEmail' inputMode='email' />
 				</div>
 				<div>
 					<label htmlFor='inputModeNumeric'>numeric</label>
 					<br />
-					<input type='text' id='inputModeNumeric' inputMode='numeric' />
+					<input id='inputModeNumeric' inputMode='numeric' />
 				</div>
 				<div>
 					<label htmlFor='inputModeSearch'>search</label>
 					<br />
-					<input type='search' id='inputModeSearch' inputMode='search' />
+					<input id='inputModeSearch' inputMode='search' />
 				</div>
 				<div>
 					<label htmlFor='inputModeTel'>tel</label>
 					<br />
-					<input type='tel' id='inputModeTel' inputMode='tel' />
+					<input id='inputModeTel' inputMode='tel' />
 				</div>
 				<div>
 					<label htmlFor='inputModeUrl'>url</label>
 					<br />
-					<input type='url' id='inputModeUrl' inputMode='url' />
+					<input id='inputModeUrl' inputMode='url' />
 				</div>
 			</form>
 		</div>

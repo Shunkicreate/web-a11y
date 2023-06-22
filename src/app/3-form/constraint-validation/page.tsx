@@ -121,7 +121,7 @@ const Page = () => {
                 </li>
                 <p>
                 ・エラーが発生したフォームコントロール<br></br>
-                ・グループにariainvalid="true"を付ける<br></br>
+                ・グループにariainvalid=trueを付ける<br></br>
                 ・エラーメッセージをフォームコントロールに関連付ける（エラーメッセージをlabel要素に含めるか、ariadescribedby属性で関連付ける）<br></br>
                 ・エラーメッセージをグループに関連付ける（エラーメッセージをlegend要素に含めるか、ariadescribedby属性で関連付ける）
                 </p>

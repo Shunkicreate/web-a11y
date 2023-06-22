@@ -274,9 +274,9 @@ const Page = () => {
 		<div>
 			<form>
 				<div>
-					<label htmlFor='inputTypeDecimal'>decimal</label>
+					<label htmlFor='inputTypeText'>text</label>
 					<br />
-					<input type='text' id='inputTypeDecimal' />
+					<input type='text' id='inputTypeText' />
 				</div>
 				<div>
 					<label htmlFor='inputTypeEmail'>email</label>
@@ -284,9 +284,9 @@ const Page = () => {
 					<input type='email' id='inputTypeEmail' />
 				</div>
 				<div>
-					<label htmlFor='inputTypeNumeric'>numeric</label>
+					<label htmlFor='inputTypeNumber'>numeric</label>
 					<br />
-					<input type='text' id='inputTypeNumeric' />
+					<input type='number' id='inputTypeNumber' />
 				</div>
 				<div>
 					<label htmlFor='inputTypeSearch'>search</label>

@@ -1,18 +1,15 @@
-"use client"
+"use client";
 //A functional component that receives jsx type source code in props and displays the contents of the source code and the execution result
 import ReactDOMServer from "react-dom/server";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";
 import styles from "./showCode.module.css";
 import { a11yDark, a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-//osのダークモードを取得する関数
-const getOSDarkMode = () => {
-	const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-	return darkModeMediaQuery.matches;
-};
+import useDarkMode from "./useDarkMode";
 
 const ShowCode = ({ code }: { code: JSX.Element }) => {
-	if (getOSDarkMode()) {
+	//osのダークモードを取得する関数
+	const { isDarkMode } = useDarkMode();
+	if (isDarkMode) {
 		return (
 			<div className={styles.showCode}>
 				<div className={styles.showRow}>

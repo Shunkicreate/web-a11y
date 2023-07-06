@@ -1,3 +1,4 @@
+'use client';
 //A functional component that receives jsx type source code in props and displays the contents of the source code and the execution result
 import ReactDOMServer from "react-dom/server";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/default-highlight";

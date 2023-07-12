@@ -1,7 +1,5 @@
 const Index = () => {
-    return(
-        <h1>第三章 フォームの改善</h1>
-    )
-}
+	return <h1>第三章 フォームの改善</h1>;
+};
 
-export default Index
+export default Index;

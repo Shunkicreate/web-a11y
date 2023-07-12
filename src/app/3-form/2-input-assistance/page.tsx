@@ -2,275 +2,323 @@
 import ShowCode from "@/components/showCode";
 import { renderToString } from "react-dom/server";
 const Page = () => {
-	const OneFormControl = 
-<form action="">
-	<div>
-		<label htmlFor="name">名前: <br/>
-			<input type="text" id="name" name="name" autoComplete="name" />
-		</label>
-	</div>
-	<div>
-		<label htmlFor="email">e-mail: <br/>
-			<input type="email" id="email" name="email" autoComplete="email" />
-		</label>
-	</div>
-	<div>
-		<label htmlFor="tel">電話番号: <br/>
-			<input type="text" id="tel" name="tel" autoComplete="tel" />
-		</label>
-	</div>
-	<div>
-		<label htmlFor="ccnumber">クレジットカード番号: <br/>
-			<input type="text" id="ccnumber" name="ccnumber" autoComplete="cc-number" />
-		</label>
-	</div>
-	</form>
-	;
-	const BadAutoFormInput = 
-<form>
-	<div>
-		<label>クレジットカード名義: 
-			<input type="text" name="credit-name" />
-		</label>
-	</div>
-	<div>
-		<label>クレジットカード番号: 
-			<input type="text" name="credit-number" />
-		</label>
-	</div>
-</form>
-	;
-	const GoodAutoFormInput = 
-<form>
-	<div>
-		<label htmlFor="name">名前: <br/>
-			<input type="text" id="name" name="name" autoComplete="name" />
-		</label>
-	</div>
-	<div>
-		<label htmlFor="email">メールアドレス: <br/>
-			<input type="email" id="email" name="email" autoComplete="email"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="username">ユーザー名またはアカウント名: <br/>
-			<input type="text" id="username" name="username" autoComplete="username"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="new-password">新しいパスワード: <br/>
-			<input type="password" id="new-password" name="new-password" autoComplete="new-password"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="current-password">ユーザーの現在のパスワード: <br/>
-			<input type="password" id="current-password" name="current-password" autoComplete="current-password"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="one-time-code">ユーザー自身を確認するために使われるワンタイムコード: <br/>
-			<input type="text" id="one-time-code" name="one-time-code" autoComplete="one-time-code"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="organization-title">職名や組織内の肩書: <br/>
-			<input type="text" id="organization-title" name="organization-title" autoComplete="organization-title"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="organization">企業または団体の名前: <br/>
-			<input type="text" id="organization" name="organization" autoComplete="organization"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="street-address">住所: <br/>
-			<input type="text" id="street-address" name="street-address" autoComplete="street-address"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="address-level1">住所がある都道府県: <br/>
-			<input type="text" id="address-level1" name="address-level1" autoComplete="address-level1"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="address-level2">市町村や、住所のあるその他の地域: <br/>
-			<input type="text" id="address-level2" name="address-level2" autoComplete="address-level2"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="address-level3">3段階の行政レベルがある住所において、3番目の行政レベル: <br/>
-			<input type="text" id="address-level3" name="address-level3" autoComplete="address-level3"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="address-level4">住所が4段階まである場合のもっとも細かい行政レベル: <br/>
-			<input type="text" id="address-level4" name="address-level4" autoComplete="address-level4"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="country">国コード: <br/>
-			<input type="text" id="country" name="country" autoComplete="country"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="country-name">国名: <br/>
-			<input type="text" id="country-name" name="country-name" autoComplete="country-name"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="postal-code">郵便番号: <br/>
-			<input type="text" id="postal-code" name="postal-code" autoComplete="postal-code"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="cc-name">クレジットカード名義: <br/>
-			<input type="text" id="cc-name" name="cc-name" autoComplete="cc-name"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="cc-number">クレジットカード番号: <br/>
-			<input type="text" id="cc-number" name="cc-number" autoComplete="cc-number"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="cc-exp">支払手段の有効期限: <br/>
-			<input type="text" id="cc-exp" name="cc-exp" autoComplete="cc-exp"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="bday">生年月日: <br/>
-			<input type="text" id="bday" name="bday" autoComplete="bday"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="sex">性別: <br/>
-			<input type="text" id="sex" name="sex" autoComplete="sex"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="tel">国番号を含む、完全な電話番号: <br/>
-			<input type="tel" id="tel" name="tel" autoComplete="tel"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="url">URL: <br/>
-			<input type="url" id="url" name="url"/>
-		</label>
-	</div>
-	<div>
-		<label htmlFor="photo">フォームの他のフィールドの文脈における人物、企業、連絡先情報を表す画像のURL:
-			<input type="text" id="photo" name="photo" autoComplete="photo"/>
-		</label>
-	</div>
-</form>
-	;
-	const BadFormControl = 
-	<label>
-		商品の色（青・緑・黄・赤のいずれかを入力してください）
-		<input type="text" />
-	</label>
-;
-	const FormType = 
-		<form>
+	const OneFormControl = (
+		<form action=''>
 			<div>
-				<label htmlFor="button">button:
-				<input type="button" id="button" style={{width:"3rem"}}/>
+				<label htmlFor='name'>
+					名前: <br />
+					<input type='text' id='name' name='name' autoComplete='name' />
 				</label>
 			</div>
 			<div>
-				<label htmlFor="checkbox">checkbox:
-				<input type="checkbox" id="checkbox"/>
+				<label htmlFor='email'>
+					e-mail: <br />
+					<input type='email' id='email' name='email' autoComplete='email' />
 				</label>
 			</div>
 			<div>
-				<label htmlFor="date">date:
-				<input type="date" id="date"/>
+				<label htmlFor='tel'>
+					電話番号: <br />
+					<input type='text' id='tel' name='tel' autoComplete='tel' />
 				</label>
 			</div>
 			<div>
-				<label htmlFor="datetime-local">datetime-local:
-				<input type="datetime-local" id="datetime-local"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="email">email:
-				<input type="email" id="email"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="file">file:
-				<input type="file" id="file"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="hidden">hidden:
-				<input type="hidden" id="hidden"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="image">image:
-				<input type="image" id="image"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="month">month:
-				<input type="month" id="month"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="number">number:
-				<input type="number" id="number"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="password">password:
-				<input type="password" id="password"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="radio">radio:
-				<input type="radio" id="radio"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="range">range:
-				<input type="range" id="range"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="reset">reset:
-				<input type="reset" id="reset"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="submit">submit:
-				<input type="submit" id="submit"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="text">text:
-				<input type="text" id="text"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="time">time:
-				<input type="time" id="time"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="url">url:
-				<input type="url" id="url"/>
-				</label>
-			</div>
-			<div>
-				<label htmlFor="week">week:
-				<input type="week" id="week"/>
+				<label htmlFor='ccnumber'>
+					クレジットカード番号: <br />
+					<input type='text' id='ccnumber' name='ccnumber' autoComplete='cc-number' />
 				</label>
 			</div>
 		</form>
-	;
-
-	const inputType = 
+	);
+	const BadAutoFormInput = (
+		<form>
+			<div>
+				<label>
+					クレジットカード名義:
+					<input type='text' name='credit-name' />
+				</label>
+			</div>
+			<div>
+				<label>
+					クレジットカード番号:
+					<input type='text' name='credit-number' />
+				</label>
+			</div>
+		</form>
+	);
+	const GoodAutoFormInput = (
+		<form>
+			<div>
+				<label htmlFor='name'>
+					名前: <br />
+					<input type='text' id='name' name='name' autoComplete='name' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='email'>
+					メールアドレス: <br />
+					<input type='email' id='email' name='email' autoComplete='email' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='username'>
+					ユーザー名またはアカウント名: <br />
+					<input type='text' id='username' name='username' autoComplete='username' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='new-password'>
+					新しいパスワード: <br />
+					<input type='password' id='new-password' name='new-password' autoComplete='new-password' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='current-password'>
+					ユーザーの現在のパスワード: <br />
+					<input type='password' id='current-password' name='current-password' autoComplete='current-password' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='one-time-code'>
+					ユーザー自身を確認するために使われるワンタイムコード: <br />
+					<input type='text' id='one-time-code' name='one-time-code' autoComplete='one-time-code' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='organization-title'>
+					職名や組織内の肩書: <br />
+					<input type='text' id='organization-title' name='organization-title' autoComplete='organization-title' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='organization'>
+					企業または団体の名前: <br />
+					<input type='text' id='organization' name='organization' autoComplete='organization' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='street-address'>
+					住所: <br />
+					<input type='text' id='street-address' name='street-address' autoComplete='street-address' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='address-level1'>
+					住所がある都道府県: <br />
+					<input type='text' id='address-level1' name='address-level1' autoComplete='address-level1' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='address-level2'>
+					市町村や、住所のあるその他の地域: <br />
+					<input type='text' id='address-level2' name='address-level2' autoComplete='address-level2' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='address-level3'>
+					3段階の行政レベルがある住所において、3番目の行政レベル: <br />
+					<input type='text' id='address-level3' name='address-level3' autoComplete='address-level3' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='address-level4'>
+					住所が4段階まである場合のもっとも細かい行政レベル: <br />
+					<input type='text' id='address-level4' name='address-level4' autoComplete='address-level4' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='country'>
+					国コード: <br />
+					<input type='text' id='country' name='country' autoComplete='country' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='country-name'>
+					国名: <br />
+					<input type='text' id='country-name' name='country-name' autoComplete='country-name' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='postal-code'>
+					郵便番号: <br />
+					<input type='text' id='postal-code' name='postal-code' autoComplete='postal-code' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='cc-name'>
+					クレジットカード名義: <br />
+					<input type='text' id='cc-name' name='cc-name' autoComplete='cc-name' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='cc-number'>
+					クレジットカード番号: <br />
+					<input type='text' id='cc-number' name='cc-number' autoComplete='cc-number' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='cc-exp'>
+					支払手段の有効期限: <br />
+					<input type='text' id='cc-exp' name='cc-exp' autoComplete='cc-exp' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='bday'>
+					生年月日: <br />
+					<input type='text' id='bday' name='bday' autoComplete='bday' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='sex'>
+					性別: <br />
+					<input type='text' id='sex' name='sex' autoComplete='sex' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='tel'>
+					国番号を含む、完全な電話番号: <br />
+					<input type='tel' id='tel' name='tel' autoComplete='tel' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='url'>
+					URL: <br />
+					<input type='url' id='url' name='url' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='photo'>
+					フォームの他のフィールドの文脈における人物、企業、連絡先情報を表す画像のURL:
+					<input type='text' id='photo' name='photo' autoComplete='photo' />
+				</label>
+			</div>
+		</form>
+	);
+	const BadFormControl = (
+		<label>
+			商品の色（青・緑・黄・赤のいずれかを入力してください）
+			<input type='text' />
+		</label>
+	);
+	const FormType = (
+		<form>
+			<div>
+				<label htmlFor='button'>
+					button:
+					<input type='button' id='button' style={{ width: "3rem" }} />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='checkbox'>
+					checkbox:
+					<input type='checkbox' id='checkbox' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='date'>
+					date:
+					<input type='date' id='date' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='datetime-local'>
+					datetime-local:
+					<input type='datetime-local' id='datetime-local' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='email'>
+					email:
+					<input type='email' id='email' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='file'>
+					file:
+					<input type='file' id='file' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='hidden'>
+					hidden:
+					<input type='hidden' id='hidden' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='image'>
+					image:
+					<input type='image' id='image' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='month'>
+					month:
+					<input type='month' id='month' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='number'>
+					number:
+					<input type='number' id='number' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='password'>
+					password:
+					<input type='password' id='password' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='radio'>
+					radio:
+					<input type='radio' id='radio' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='range'>
+					range:
+					<input type='range' id='range' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='reset'>
+					reset:
+					<input type='reset' id='reset' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='submit'>
+					submit:
+					<input type='submit' id='submit' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='text'>
+					text:
+					<input type='text' id='text' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='time'>
+					time:
+					<input type='time' id='time' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='url'>
+					url:
+					<input type='url' id='url' />
+				</label>
+			</div>
+			<div>
+				<label htmlFor='week'>
+					week:
+					<input type='week' id='week' />
+				</label>
+			</div>
+		</form>
+	);
+	const inputType = (
 		<div>
 			<form>
 				<div>
@@ -305,9 +353,8 @@ const Page = () => {
 				</div>
 			</form>
 		</div>
-	;
-
-	const inputMode = 
+	);
+	const inputMode = (
 		<div>
 			<form>
 				<div>
@@ -342,47 +389,48 @@ const Page = () => {
 				</div>
 			</form>
 		</div>
-	;
-
-	const limitInput = 
+	);
+	const limitInput = (
 		<div>
-			<input type="range" min="10" max="100" step="10" />
+			<input type='range' min='10' max='100' step='10' />
 		</div>
-	
+	);
 
-	const listBox = 
+	const listBox = (
 		<div>
 			<label>
 				都道府県
 				<select>
-					<option value="" selected>未選択</option>
-					<option value="北海道">北海道</option>
-					<option value="青県森">青森県</option>
-					<option value="秋田県">秋田県</option>
-					<option value="山形県">山形県</option>
-					<option value="岩手県">岩手県</option>
-					<option value="福島県">福島県</option>
+					<option value='' selected>
+						未選択
+					</option>
+					<option value='北海道'>北海道</option>
+					<option value='青県森'>青森県</option>
+					<option value='秋田県'>秋田県</option>
+					<option value='山形県'>山形県</option>
+					<option value='岩手県'>岩手県</option>
+					<option value='福島県'>福島県</option>
 				</select>
 			</label>
 		</div>
-	
+	);
 
-	const comboBox = 
+	const comboBox = (
 		<div>
 			<label>
 				都道府県
-				<input type="text" list="prefecture-list" />
-				<datalist id="prefecture-list">
-					<option value="北海道">北海道</option>
-					<option value="青県森">青森県</option>
-					<option value="秋田県">秋田県</option>
-					<option value="山形県">山形県</option>
-					<option value="岩手県">岩手県</option>
-					<option value="福島県">福島県</option>
+				<input type='text' list='prefecture-list' />
+				<datalist id='prefecture-list'>
+					<option value='北海道'>北海道</option>
+					<option value='青県森'>青森県</option>
+					<option value='秋田県'>秋田県</option>
+					<option value='山形県'>山形県</option>
+					<option value='岩手県'>岩手県</option>
+					<option value='福島県'>福島県</option>
 				</datalist>
 			</label>
 		</div>
-	
+	);
 
 	return (
 		<div>

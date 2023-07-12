@@ -2,7 +2,6 @@ import styles from "./page.module.css";
 import path from "path";
 import { readdirSync, statSync } from "fs";
 import Link from "next/link";
-import { finished } from "stream";
 
 //ディレクトリの構造をファイルとともに保持するjson形式のtype
 type dirTreeType = {
@@ -22,10 +21,10 @@ const findAllFiles = (dir: string, num: number) => {
 		//最初はディレクトリのみを表示する
 		if (!(num === 0 && filename.includes("."))) {
 			if (stats.isFile()) {
-				const dirTree: dirTreeType = { name: filename, stats: "file", path: fullPath, children: [] };
+				const dirTree: dirTreeType = { name: rmTopLabel(filename), stats: "file", path: fullPath, children: [] };
 				dirTrees.push(dirTree);
 			} else if (stats.isDirectory()) {
-				const dirTree: dirTreeType = { name: filename, stats: "dir", path: fullPath, children: [] };
+				const dirTree: dirTreeType = { name: rmTopLabel(filename), stats: "dir", path: fullPath, children: [] };
 				dirTree.children = [...dirTree.children, ...findAllFiles(fullPath, num + 1)];
 				dirTrees.push(dirTree);
 			}
@@ -34,9 +33,9 @@ const findAllFiles = (dir: string, num: number) => {
 	return dirTrees;
 };
 
-const rmPageName = (name: string) => {
-	const regex = /[\\/]page.tsx/;
-	const result = name.split(regex)[0];
+const rmTopLabel = (name: string) => {
+	const regex = /[0-9]-/;
+	const result = name.replace(regex, "");
 	return result;
 };
 
@@ -69,28 +68,28 @@ export default async function Home() {
 			<div className={styles.tableOfContents}>
 				<label>
 					目次
-					<ul>
+					<ol>
 						{filePaths.map((filePath, i) => {
 							return (
 								<>
 									{filePath.stats === "dir" ? (
-										<ul>
+										<>
 											<NavLink key={i} path={filePath.path} name={filePath.name} />
 											<ul>
 												{filePath.children
 													.filter((child) => child.stats === "dir")
 													.map((child, j) => {
-														return <NavLink key={j}  path={child.path} name={child.name} />;
+														return <NavLink key={j} path={child.path} name={child.name} />;
 													})}
 											</ul>
-										</ul>
+										</>
 									) : (
 										<></>
 									)}
 								</>
 							);
 						})}
-					</ul>
+					</ol>
 				</label>
 			</div>
 		</>

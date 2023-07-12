@@ -27,15 +27,15 @@
 .NavLink {
 	margin: 0.5rem;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	/* justify-content: left;
+	align-items: center; */
 }
 
 .NavLink a {
-	padding: 0.7rem 2rem;
+	padding: 1rem 1rem;
 	display: block;
-	border-radius: 1.3rem;
-	border: 1px ridge rgba(220, 220, 220, 0.6);
+	border-radius: 0.5rem;
+	/* border: 1px ridge rgba(220, 220, 220, 0.6); */
 	font-weight: 500;
 }
 
@@ -54,5 +54,5 @@
 .tableOfContents {
 	margin: 2rem auto;
 	padding: 1rem 3rem;
-	width: 25rem;
+	width: 80%;
 }

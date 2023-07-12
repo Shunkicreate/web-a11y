@@ -2,23 +2,36 @@ import styles from "./page.module.css";
 import path from "path";
 import { readdirSync, statSync } from "fs";
 import Link from "next/link";
+import { finished } from "stream";
 
+//ディレクトリの構造をファイルとともに保持するjson形式のtype
+type dirTreeType = {
+	name: string;
+	stats: "file" | "dir";
+	path: string;
+	children: dirTreeType[];
+};
+
+//ディレクトリの構造をfsで読み取ってきて、それをdirTreeTypeに変換する関数
 const findAllFiles = (dir: string, num: number) => {
 	const filenames = readdirSync(dir);
-	let filePaths: string[] = [];
+	const dirTrees: dirTreeType[] = [];
 	filenames.forEach((filename) => {
 		const fullPath = path.join(dir, filename);
 		const stats = statSync(fullPath);
+		//最初はディレクトリのみを表示する
 		if (!(num === 0 && filename.includes("."))) {
 			if (stats.isFile()) {
-				const addFileName = pickUpPath(rmPageName(fullPath));
-				filePaths.push(addFileName);
+				const dirTree: dirTreeType = { name: filename, stats: "file", path: fullPath, children: [] };
+				dirTrees.push(dirTree);
 			} else if (stats.isDirectory()) {
-				filePaths = [...filePaths, ...findAllFiles(fullPath, num + 1)];
+				const dirTree: dirTreeType = { name: filename, stats: "dir", path: fullPath, children: [] };
+				dirTree.children = [...dirTree.children, ...findAllFiles(fullPath, num + 1)];
+				dirTrees.push(dirTree);
 			}
 		}
 	});
-	return filePaths;
+	return dirTrees;
 };
 
 const rmPageName = (name: string) => {
@@ -33,18 +46,18 @@ const pickUpPath = (path: string) => {
 	return result;
 };
 
-const NavLink = ({ site }: { site: string }) => {
+const NavLink = ({ path, name }: { path: string; name: string }) => {
 	return (
 		<li className={styles.NavLink}>
-			<Link href={site ?? ""}>{site}</Link>
+			<Link href={pickUpPath(path) ?? ""}>{name}</Link>
 		</li>
 	);
 };
 
-
 export default async function Home() {
 	const filePath = path.join(process.cwd(), "src/app");
 	const filePaths = findAllFiles(filePath, 0);
+	console.log(filePaths);
 
 	return (
 		<>
@@ -57,8 +70,25 @@ export default async function Home() {
 				<label>
 					目次
 					<ul>
-						{filePaths.map((site, i) => {
-							return <NavLink key={i} site={site}></NavLink>;
+						{filePaths.map((filePath, i) => {
+							return (
+								<>
+									{filePath.stats === "dir" ? (
+										<ul>
+											<NavLink key={i} path={filePath.path} name={filePath.name} />
+											<ul>
+												{filePath.children
+													.filter((child) => child.stats === "dir")
+													.map((child, j) => {
+														return <NavLink key={j}  path={child.path} name={child.name} />;
+													})}
+											</ul>
+										</ul>
+									) : (
+										<></>
+									)}
+								</>
+							);
 						})}
 					</ul>
 				</label>

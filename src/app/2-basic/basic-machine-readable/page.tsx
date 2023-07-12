@@ -1,40 +1,45 @@
 import ShowCode from "@/components/showCode";
 const Page = () => {
-	const ButtonExample = `
-<button>
-    <img src="/imgs/add.svg" alt="追加"/>
-</button>
-`;
-	const BadButtonExample = `
-<div className="Button">
-    <svg className="Icon -add" >
-        <g opacity="0.64" clip-path="url(#clip0_1211_2)">
-            <circle cx="32" cy="32" r="30.5" fill="white" stroke="black" stroke-width="3"/>
-            <rect x="30" y="17" width="4" height="30" fill="black"/>
-            <rect x="17" y="34" width="4" height="30" transform="rotate(-90 17 34)" fill="black"/>
-        </g>    
-    </svg>
-</div>
-`;
-	const CheckboxExample = `
-<label htmlFor="checkbox">
-    <input type="checkbox" checked id="checkbox" />
-    同意する
-</label>
-`;
-	const TabExample = `
-<div role="tablist">
-    <button role="tab" aria-selected="true" id="search-tab">検索して追加</button>
-    <button role="tab" aria-selected="false" id="file-tab">ファイルから追加</button>
-</div>
-<div role="tabpanel" aria-labelledby="seach-tab" aria-hidden="false">
-(省略)
-</div>
-<div role="tabpanel" aria-labelledby="file-tab" aria-hidden="true">
-(省略)
-</div>
-`;
-
+	const ButtonExample = (
+		<button>
+			<img src='/imgs/add.svg' alt='追加' />
+		</button>
+	);
+	const BadButtonExample = (
+		<div className='Button'>
+			<svg className='Icon -add'>
+				<g opacity='0.64' clip-path='url(#clip0_1211_2)'>
+					<circle cx='32' cy='32' r='30.5' fill='white' stroke='black' stroke-width='3' />
+					<rect x='30' y='17' width='4' height='30' fill='black' />
+					<rect x='17' y='34' width='4' height='30' transform='rotate(-90 17 34)' fill='black' />
+				</g>
+			</svg>
+		</div>
+	);
+	const CheckboxExample = (
+		<label htmlFor='checkbox'>
+			<input type='checkbox' checked id='checkbox' />
+			同意する
+		</label>
+	);
+	const TabExample = (
+		<div>
+			<div role='tablist'>
+				<button role='tab' aria-selected='true' id='search-tab'>
+					検索して追加
+				</button>
+				<button role='tab' aria-selected='false' id='file-tab'>
+					ファイルから追加
+				</button>
+			</div>
+			<div role='tabpanel' aria-labelledby='seach-tab' aria-hidden='false'>
+				(省略)
+			</div>
+			<div role='tabpanel' aria-labelledby='file-tab' aria-hidden='true'>
+				(省略)
+			</div>
+		</div>
+	);
 	return (
 		<div>
 			<h1>基礎となるマシンリーダブルを理解する</h1>
@@ -91,19 +96,21 @@ const Page = () => {
 			<p>
 				WAI-ARIAはHTMLのセマンティクスのみを補完するため、振る舞いまでは再現してくれない。例えば、div要素にrole=&quot;button&quot;を付与してもキーボードで操作できるようにはならない。また、href属性を持つa要素であればコンテキストメニューにURLをコピーしたり、新しいタブで開いたりするメニューが追加される。また、そもそも、WAI-ARIAを理解できるユーザーエージェントや、支援技術が限られているため、WAI-ARIAよりもHTMLネイティブセマンティクスを使うべきである。
 			</p>
-            <h2>HTMLとWAI-ARIAとAOM</h2>
-            <p>
-                これまで説明してきた名前、役割、状態などのセマンティクスはOSが用意しているアクセシビリティAPIを介してアプリケーションとやり取りする。WindowsだとMicrosoft Active Accessibility、Windows Automation APIなどがあり、macOSだとNSAccessibilityである。Voice Overなどの支援技術はAOMを読み取り、操作することでアプリケーションを操作する。ブラウザは自身が持つ検索バーや戻るボタンなどのインターフェースだけではなく、Webページの著者が作成したコンテンツもAOMに変換してアクセシビリティAPIを通じて公開している。それによってユーザは支援技術を利用してWebページにアクセスできる。
-            </p>
+			<h2>HTMLとWAI-ARIAとAOM</h2>
+			<p>
+				これまで説明してきた名前、役割、状態などのセマンティクスはOSが用意しているアクセシビリティAPIを介してアプリケーションとやり取りする。WindowsだとMicrosoft
+				Active Accessibility、Windows Automation APIなどがあり、macOSだとNSAccessibilityである。Voice
+				Overなどの支援技術はAOMを読み取り、操作することでアプリケーションを操作する。ブラウザは自身が持つ検索バーや戻るボタンなどのインターフェースだけではなく、Webページの著者が作成したコンテンツもAOMに変換してアクセシビリティAPIを通じて公開している。それによってユーザは支援技術を利用してWebページにアクセスできる。
+			</p>
 			<h3>WebコンテンツからAOMを作成する</h3>
 			<p>
-				ブラウザは画面上に表示するインターフェースを生成するために、HTMLからDOM(Document Object Model)を生成する。そしてCSSからCSSオブジェクトモデルを生成し、2つのオブジェクトモデルを組み合わせる。そこからレンダリングツリーを作成してレイアウト計算を行い、最終的に画面に描画する。WAI-ARIAを含んだHTMLとCSSをもとにAOMは生成される。優先順位は次のようになる。
+				ブラウザは画面上に表示するインターフェースを生成するために、HTMLからDOM(Document Object
+				Model)を生成する。そしてCSSからCSSオブジェクトモデルを生成し、2つのオブジェクトモデルを組み合わせる。そこからレンダリングツリーを作成してレイアウト計算を行い、最終的に画面に描画する。WAI-ARIAを含んだHTMLとCSSをもとにAOMは生成される。優先順位は次のようになる。
 				<div>WAI-ARIA &gt; CSS &gt; HTML</div>
 				つまり、HTMLのプロパティはCSSに上書きされて、さらにWAI-ARIAに上書きされる。CSSによるロールの変更濃霧はブラウザによって異なる場合があるが、WAI-ARIAが優先されることはおおむね度のブラウザでも同じ。ただし、HTMLではrole属性とaria-*属性の組み合わせもある程度定められているため、WAI-ARIAを使用するときは気を付けないといけない。
-            </p>
+			</p>
 		</div>
 	);
 };
 
 export default Page;
-

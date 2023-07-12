@@ -41,6 +41,7 @@ const NavLink = ({ site }: { site: string }) => {
 	);
 };
 
+
 export default async function Home() {
 	const filePath = path.join(process.cwd(), "src/app");
 	const filePaths = findAllFiles(filePath, 0);

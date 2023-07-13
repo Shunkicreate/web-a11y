@@ -124,6 +124,7 @@ ul {
 
 li {
 	list-style-type: disc;
+  margin: 0.5rem 0;
 }
 
 ol {

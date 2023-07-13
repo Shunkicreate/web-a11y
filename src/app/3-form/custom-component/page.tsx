@@ -1,41 +1,5 @@
-import ShowCode from '@/components/showCode';
 import Link from 'next/link';
 const Page = () => {
-	const ButtonExample = `
-<button>
-    <img src='/imgs/add.svg' alt='追加'/>
-</button>
-`;
-	const BadButtonExample = `
-<div className='Button'>
-    <svg className='Icon -add' >
-        <g opacity='0.64' clip-path='url(#clip0_1211_2)'>
-            <circle cx='32' cy='32' r='30.5' fill='white' stroke='black' stroke-width='3'/>
-            <rect x='30' y='17' width='4' height='30' fill='black'/>
-            <rect x='17' y='34' width='4' height='30' transform='rotate(-90 17 34)' fill='black'/>
-        </g>    
-    </svg>
-</div>
-`;
-	const CheckboxExample = `
-<label htmlFor='checkbox'>
-    <input type='checkbox' checked id='checkbox' />
-    同意する
-</label>
-`;
-	const TabExample = `
-<div role='tablist'>
-    <button role='tab' aria-selected='true' id='search-tab'>検索して追加</button>
-    <button role='tab' aria-selected='false' id='file-tab'>ファイルから追加</button>
-</div>
-<div role='tabpanel' aria-labelledby='seach-tab' aria-hidden='false'>
-(省略)
-</div>
-<div role='tabpanel' aria-labelledby='file-tab' aria-hidden='true'>
-(省略)
-</div>
-`;
-
 	return (
 		<div>
 			<h1>カスタムコンポーネント</h1>
@@ -159,8 +123,6 @@ const Page = () => {
 				</ul>
 				<li>ロールに対して必須の構造があるか確かめる</li>
 			</ul>
-		
-			{/* <ShowCode code={BadButtonExample} /> */}
 		</div>
 	);
 };

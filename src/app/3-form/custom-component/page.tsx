@@ -1,37 +1,37 @@
-import ShowCode from "@/components/showCode";
-import Link from "next/link";
+import ShowCode from '@/components/showCode';
+import Link from 'next/link';
 const Page = () => {
 	const ButtonExample = `
 <button>
-    <img src="/imgs/add.svg" alt="追加"/>
+    <img src='/imgs/add.svg' alt='追加'/>
 </button>
 `;
 	const BadButtonExample = `
-<div className="Button">
-    <svg className="Icon -add" >
-        <g opacity="0.64" clip-path="url(#clip0_1211_2)">
-            <circle cx="32" cy="32" r="30.5" fill="white" stroke="black" stroke-width="3"/>
-            <rect x="30" y="17" width="4" height="30" fill="black"/>
-            <rect x="17" y="34" width="4" height="30" transform="rotate(-90 17 34)" fill="black"/>
+<div className='Button'>
+    <svg className='Icon -add' >
+        <g opacity='0.64' clip-path='url(#clip0_1211_2)'>
+            <circle cx='32' cy='32' r='30.5' fill='white' stroke='black' stroke-width='3'/>
+            <rect x='30' y='17' width='4' height='30' fill='black'/>
+            <rect x='17' y='34' width='4' height='30' transform='rotate(-90 17 34)' fill='black'/>
         </g>    
     </svg>
 </div>
 `;
 	const CheckboxExample = `
-<label htmlFor="checkbox">
-    <input type="checkbox" checked id="checkbox" />
+<label htmlFor='checkbox'>
+    <input type='checkbox' checked id='checkbox' />
     同意する
 </label>
 `;
 	const TabExample = `
-<div role="tablist">
-    <button role="tab" aria-selected="true" id="search-tab">検索して追加</button>
-    <button role="tab" aria-selected="false" id="file-tab">ファイルから追加</button>
+<div role='tablist'>
+    <button role='tab' aria-selected='true' id='search-tab'>検索して追加</button>
+    <button role='tab' aria-selected='false' id='file-tab'>ファイルから追加</button>
 </div>
-<div role="tabpanel" aria-labelledby="seach-tab" aria-hidden="false">
+<div role='tabpanel' aria-labelledby='seach-tab' aria-hidden='false'>
 (省略)
 </div>
-<div role="tabpanel" aria-labelledby="file-tab" aria-hidden="true">
+<div role='tabpanel' aria-labelledby='file-tab' aria-hidden='true'>
 (省略)
 </div>
 `;
@@ -76,7 +76,7 @@ const Page = () => {
 			<h3>カスタムコンポーネントサンプルを参照する</h3>
 			<p>世の中には、アクセシビリティを考慮して設計された、たくさんのカスタムコンポーネントサンプルが公開されています。サンプルに頼らずに自己流で開発しようとすると、HTMLやWAI-ARIAに関する様々な仕様書をいちから調査するコストがかかったり、仕様を満たさないカスタムコンポーネントを開発してしまったりしてしまいます。正しいサンプルを参照して、それらのリスクを下げることが大切です。</p>
 			<p>
-				最もよく参照されるカスタムコンポーネントサンプルのひとつは<a href="https://www.w3.org/WAI/ARIA/apg/">「ARIA Authoring Practices Guide (APG)」</a>です。この文書では、WAI-ARIAを利用してさまざまなカスタムコンポーネントを実装する方法がパターンとして解説されています。	サンプルには、カスタムコンポーネントごとに主に以下の内容が解説されています。
+				最もよく参照されるカスタムコンポーネントサンプルのひとつは<a href='https://www.w3.org/WAI/ARIA/apg/'>「ARIA Authoring Practices Guide (APG)」</a>です。この文書では、WAI-ARIAを利用してさまざまなカスタムコンポーネントを実装する方法がパターンとして解説されています。	サンプルには、カスタムコンポーネントごとに主に以下の内容が解説されています。
 			</p>
 			<ul>
 				<li>推奨されるキーボード操作
@@ -99,7 +99,7 @@ const Page = () => {
 
 			<h2>カスタムコンポーネントを適切に設計する(具体的方法)</h2>
 			<h3>適切なキーボード操作を設計する</h3>
-			<p><a href="../../2-basic/2_basic_keyboard">2.2節「キーボード操作の基本」</a>では基本的なキーボード操作のサポート方法について解説しました。2.2節の内容に加えて、カスタムコンポーネントでは以下の観点に注意を払う必要があります。</p>
+			<p><a href='../../2-basic/2_basic_keyboard'>2.2節「キーボード操作の基本」</a>では基本的なキーボード操作のサポート方法について解説しました。2.2節の内容に加えて、カスタムコンポーネントでは以下の観点に注意を払う必要があります。</p>
 			<ul>
 				<li>標準的なキーボード操作をサポートする</li>
 				<li>フォーカスが破綻しないようにする</li>
@@ -112,19 +112,19 @@ const Page = () => {
 			<h4>フォーカスが破綻しないようにする</h4>
 			<p>キーボード操作の設計を誤ると、キーボードだけではフォーカスできない箇所ができてしまったり、フォーカスがユーザの意図しない位置に移動してしまったりしてしまいます。キーボード操作の破綻には、以下に示すいくつかの典型的なパターンがあります。</p>
 			<ul>
-				<li><Link href="/3-form/custom-component/focus-reset-example">フォーカスのリセット</Link>
+				<li><Link href='/3-form/custom-component/focus-reset-example'>フォーカスのリセット</Link>
 					<ul>
 						<li>フォーカスがbody要素に移動してしまい、キーボード操作がページの先頭からやり直しになること</li>
 						<li>フォーカスしている要素を削除したり非表示にしたりしたときに発生</li>
 					</ul>
 				</li>
-				<li><Link href="/3-form/custom-component/focustrap-example">フォーカストラップ</Link>
+				<li><Link href='/3-form/custom-component/focustrap-example'>フォーカストラップ</Link>
 					<ul>
 						<li>フォーカスが一定の要素内に閉じ込められること</li>
 						<li>例：<kbd>Tab</kbd>キーでタブスペースを入力できるようにしてしまうと、<kbd>Tab</kbd>キーを押してもテキストエディタの中からフォーカスが抜け出せなくなってしまう。</li>
 					</ul>
 				</li>
-				<li><Link href="/3-form/custom-component/eternal-scroll-example">無限スクロール</Link>
+				<li><Link href='/3-form/custom-component/eternal-scroll-example'>無限スクロール</Link>
 					<ul>
 						<li>あるリストの末尾までスクロールすると、リストアイテムが自動的に読み込まれること</li>
 						<li>リストより後の要素にフォーカスができなくなってしまう</li>
@@ -133,8 +133,8 @@ const Page = () => {
 			</ul>
 			<p>パターンごとに問題点と対処方法をおさえておきましょう。</p>
 			<h4>不適切な要素にフォーカスできないようにする</h4>
-			<p>アクセシビリティオブジェクトモデルから削除された要素(<code>aria-hidden="true"</code>内の要素)にフォーカスできないようにしましょう。スクリーンリーダーは<code>aria-hidden="true"</code>を付けた要素を読み上げないものの、<kbd>Tab</kbd>キー等を利用してフォーカスできることはできてしまいます。</p>
-			<p><code>aria-hidden="true"</code>を付けた要素の中にフォーカス可能な要素があるのなら、<code>tabindex="-1"</code>を付けることでユーザがキーボード操作でフォーカスすることを防げます。</p>
+			<p>アクセシビリティオブジェクトモデルから削除された要素(<code>aria-hidden=&quot;true&quot;</code>内の要素)にフォーカスできないようにしましょう。スクリーンリーダーは<code>aria-hidden=&quot;true&quot;</code>を付けた要素を読み上げないものの、<kbd>Tab</kbd>キー等を利用してフォーカスできることはできてしまいます。</p>
+			<p><code>aria-hidden=&quot;true&quot;</code>を付けた要素の中にフォーカス可能な要素があるのなら、<code>tabindex=&quot;-1&quot;</code>を付けることでユーザがキーボード操作でフォーカスすることを防げます。</p>
 
 			<h3>適切なWAI-ARIAロールを検討する</h3>
 			<h4>適切なロールを指定する</h4>
@@ -142,11 +142,11 @@ const Page = () => {
 			<h4>WAI-ARIAでロールを直接指定する必要のあるロール</h4>
 			<p>ロールの中には、HTMLのネイティブセマンティクスでは表せない以下のようなロールがあります。</p>
 			<ul>
-				<li>tabロール(<code>role="tab"</code>)</li>
-				<li>tablistロール(<code>role="tablist"</code>)</li>
-				<li>tabpanelロール(<code>role="tabpanel"</code>)</li>
-				<li>treeロール(<code>role="tree"</code>)</li>
-				<li>treeitemロール(<code>role="treeitem"</code>)</li>
+				<li>tabロール(<code>role=&quot;tab&quot;</code>)</li>
+				<li>tablistロール(<code>role=&quot;tablist&quot;</code>)</li>
+				<li>tabpanelロール(<code>role=&quot;tabpanel&quot;</code>)</li>
+				<li>treeロール(<code>role=&quot;tree&quot;</code>)</li>
+				<li>treeitemロール(<code>role=&quot;treeitem&quot;</code>)</li>
 			</ul>
 			<p>これらにはWAI-ARIAで直接ロールを指定しましょう。適切なロールを付与することで、より正確な意味・構造を支援技術に伝えられます。</p>
 			<h4>ロールの制約に従う</h4>

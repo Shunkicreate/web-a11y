@@ -1,0 +1,48 @@
+.button {
+    width: 100%;
+    padding: 10px;
+}
+
+.sampleModal {
+    .screen {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.4);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dialog {
+        z-index: 10;
+        background-color: white;
+        padding: 2rem;
+    }
+}
+
+.badModal {
+    .screen {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dialog {
+        background-color: #FFF;
+        padding: 2rem;
+    }
+}

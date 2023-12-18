@@ -8,6 +8,7 @@ const Index = () => {
 			<ul>
 				<li><Link href="simple-examples/font-size">文字サイズの変更と見た目</Link></li>
 				<li><Link href="simple-examples/button">buttonタグによるボタンの実装</Link></li>
+				<li><Link href="simple-examples/a">aタグによるリンクの実装</Link></li>
 			</ul>
 		</>
 	);

@@ -9,6 +9,7 @@ const Index = () => {
 				<li><Link href="simple-examples/1-font-size">文字サイズの変更と見た目</Link></li>
 				<li><Link href="simple-examples/2-button">buttonタグによるボタンの実装</Link></li>
 				<li><Link href="simple-examples/3-a">aタグによるリンクの実装</Link></li>
+				<li><Link href="simple-examples/4-input">inputタグによる入力フォームの実装(ラジオボタン)</Link></li>
 			</ul>
 		</>
 	);

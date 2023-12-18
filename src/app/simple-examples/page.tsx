@@ -10,6 +10,7 @@ const Index = () => {
 				<li><Link href="simple-examples/2-button">buttonタグによるボタンの実装</Link></li>
 				<li><Link href="simple-examples/3-a">aタグによるリンクの実装</Link></li>
 				<li><Link href="simple-examples/4-input">inputタグによる入力フォームの実装(ラジオボタン)</Link></li>
+				<li><Link href="simple-examples/5-label">labelタグによるinput要素との紐づけ</Link></li>
 			</ul>
 		</>
 	);

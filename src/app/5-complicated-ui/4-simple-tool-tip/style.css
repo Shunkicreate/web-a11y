@@ -1,0 +1,121 @@
+.withToolTip {
+	position: relative;
+}
+
+.ToolTip {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 0;
+	border: 1px solid #949494;
+	border-radius: 4px;
+	padding: 4px;
+	width: max-content;
+	background: #fff;
+}
+
+/* ::beforeと::after擬似要素を使って、吹き出しの飛び出た部分を作る */
+.ToolTip::before,
+.ToolTip::after {
+	position: absolute;
+	content: "";
+	border-width: 8px 8px 0;
+	border-style: solid;
+	width: 0;
+	height: 0;
+}
+.ToolTip::before {
+	bottom: -8px;
+	left: 8px;
+	border-color: #949494 transparent;
+}
+.ToolTip::after {
+	bottom: -7px;
+	left: 8px;
+	border-color: #fff transparent;
+}
+h1 {
+	font-size: 120%;
+}
+
+.withTooltipSolved {
+	position: relative;
+}
+
+.tooltipSolved {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 0;
+	border: 1px solid #949494;
+	border-radius: 4px;
+	padding: 4px;
+	width: max-content;
+}
+
+/* ::beforeと::after擬似要素を使って、吹き出しの飛び出た部分を作る */
+.tooltipSolved::before,
+.tooltipSolved::after {
+	position: absolute;
+	content: "";
+	border-width: 8px 8px 0;
+	border-style: solid;
+	width: 0;
+	height: 0;
+}
+.tooltipSolved::before {
+	bottom: -8px;
+	left: 8px;
+	border-color: #949494 transparent;
+}
+.tooltipSolved::after {
+	bottom: -7px;
+	left: 8px;
+	border-color: #fff transparent;
+}
+
+.withHelpIconTooltip {
+	position: relative;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.button {
+	border: 0;
+	background: transparent;
+	padding: 0;
+}
+.icon {
+	color: #767676;
+	width: 24px;
+	height: 24px;
+}
+.HelpIconTooltip {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 0;
+	border: 1px solid #949494;
+	border-radius: 4px;
+	padding: 4px;
+	width: max-content;
+}
+
+/* ::beforeと::after擬似要素を使って、吹き出しの飛び出た部分を作る */
+/* .HelpIconTooltip::before,
+.HelpIconTooltip::after {
+	position: absolute;
+	content: "";
+	border-width: 8px 8px 0;
+	border-style: solid;
+	width: 0;
+	height: 0;
+}
+.tooltip::before {
+	bottom: -8px;
+	left: 8px;
+	border-color: #949494 transparent;
+}
+.tooltip::after {
+	bottom: -7px;
+	left: 8px;
+	border-color: #fff transparent;
+} */
